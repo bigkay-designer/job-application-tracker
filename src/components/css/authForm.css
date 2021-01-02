@@ -1,0 +1,101 @@
+.auth__form {
+  margin-top: 50px;
+}
+
+.auth__form .auth__form__container {
+  width: 95%;
+  margin: auto;
+}
+
+.auth__form .auth__form__container .auth__form--title {
+  width: 95%;
+  margin: auto;
+  text-align: center;
+}
+
+.auth__form .auth__form__container .auth__form--title h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.auth__form .auth__form__container .auth__form__sec {
+  margin-top: 40px;
+  border: 1px solid #5f5f5f;
+  padding: 20px;
+  -webkit-box-shadow: 0 1px 4px gray;
+          box-shadow: 0 1px 4px gray;
+  border-radius: 7px;
+}
+
+.auth__form .auth__form__container .auth__form__sec h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.auth__form .auth__form__container .auth__form__sec form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
+
+.auth__form .auth__form__container .auth__form__sec form input {
+  width: 100%;
+  padding: 10px 4px;
+  margin-top: 20px;
+  border-radius: 7px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 4px #636262;
+          box-shadow: 0px 1px 4px #636262;
+}
+
+.auth__form .auth__form__container .auth__form__sec form .auth__form__btn {
+  background-color: var(--authFormBtn--color);
+  width: 50%;
+  margin-top: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 560px) {
+  .auth__form {
+    margin-top: 100px;
+  }
+  .auth__form .auth__form__sec {
+    width: 65%;
+    padding: 40px 30px !important;
+    margin: auto;
+  }
+  .auth__form .auth__form__sec form {
+    -ms-grid-columns: (1fr)[2] !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-areas: "fn ln" "em em" "ps ps" !important;
+  }
+  .auth__form .auth__form__sec form input {
+    width: auto !important;
+  }
+  .auth__form .auth__form__sec form .input1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: fn;
+  }
+  .auth__form .auth__form__sec form .input2 {
+    margin-left: 20px;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: ln;
+  }
+  .auth__form .auth__form__sec form .input3 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: em;
+  }
+  .auth__form .auth__form__sec form .input4 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: ps;
+  }
+}
+/*# sourceMappingURL=authForm.css.map */
