@@ -1,4 +1,5 @@
 import React from 'react'
+import {Email, LockOpen} from '@material-ui/icons'
 import {Button} from '@material-ui/core'
 import '../css/authForm.css'
 function Signup() {
@@ -14,8 +15,8 @@ function Signup() {
                     </>
                     <>
                         <form action="#" className="auth__form--input">
-                            <input type="email" required placeholder="Emai address" />
-                            <input type="passowrd" required placeholder="Create password" />
+                            <Email className="icons" /><input className="input__login" type="email" required placeholder="Emai address" />
+                            <LockOpen className="icons" /><input className="input__login2" type="passowrd" required placeholder="Create password" />
                             <Button className="auth__form__btn" type="submit">Register</Button>
                         </form>
                     </>

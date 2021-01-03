@@ -1,5 +1,6 @@
 import React from 'react'
 import {Button} from '@material-ui/core'
+import { Person, People, Email, LockOpen } from '@material-ui/icons'
 import '../css/authForm.css'
 function Signup() {
     return (
@@ -14,10 +15,10 @@ function Signup() {
                     </>
                     <>
                         <form action="#" className="auth__form--input">
-                            <input className="input1" type="text" required placeholder="First name" />
-                            <input className="input2" type="text" required placeholder="Last name" />
-                            <input className="input3" type="email" required placeholder="Emai address" />
-                            <input className="input4" type="passowrd" required placeholder="Create password" />
+                            <Person className="icons" /><input className="input1" type="text" required placeholder="First name" />
+                            <People className="icons" /><input className="input2" type="text" required placeholder="Last name" />
+                            <Email className="icons" /><input className="input3" type="email" required placeholder="Emai address" />
+                            <LockOpen className="icons" /><input className="input4" type="passowrd" required placeholder="Create password" />
                             <Button className="auth__form__btn" type="submit">Register</Button>
                         </form>
                     </>

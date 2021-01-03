@@ -1,0 +1,25 @@
+
+@media screen and (min-width: 760px){
+    .home{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 10px;
+        width: 95%;
+        margin: auto ;
+    }
+
+}
+
+@media screen and (min-width:1060px){
+    .home{
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:1260px){
+    .home{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

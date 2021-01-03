@@ -1,10 +1,12 @@
 .auth__form {
-  margin-top: 50px;
+  background-color: #f1f1f1;
+  overflow-y: hidden;
+  height: 92vh;
 }
 
 .auth__form .auth__form__container {
   width: 95%;
-  margin: auto;
+  margin: 70px auto auto;
 }
 
 .auth__form .auth__form__container .auth__form--title {
@@ -18,11 +20,12 @@
 }
 
 .auth__form .auth__form__container .auth__form__sec {
+  background-color: #fff;
   margin-top: 40px;
-  border: 1px solid #5f5f5f;
+  border: none;
   padding: 20px;
-  -webkit-box-shadow: 0 1px 4px gray;
-          box-shadow: 0 1px 4px gray;
+  -webkit-box-shadow: 0 1px 7px #141313;
+          box-shadow: 0 1px 7px #141313;
   border-radius: 7px;
 }
 
@@ -33,69 +36,66 @@
 .auth__form .auth__form__container .auth__form__sec form {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[1];
-      grid-template-columns: repeat(1, 1fr);
+  -ms-grid-columns: 10% 90%;
+      grid-template-columns: 10% 90%;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
+      grid-template-areas: ". ." ". ." ". ." ". ." ". bt";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.auth__form .auth__form__container .auth__form__sec form .icons {
+  background-color: white;
+  padding: 5px 20px;
+  margin-top: 20px;
+  color: #033447;
 }
 
 .auth__form .auth__form__container .auth__form__sec form input {
-  width: 100%;
-  padding: 10px 4px;
+  width: 90%;
+  padding: 10px 0px 10px 10px;
+  margin-left: 20px;
   margin-top: 20px;
-  border-radius: 7px;
   border: none;
   -webkit-box-shadow: 0px 1px 4px #636262;
           box-shadow: 0px 1px 4px #636262;
+  font-size: 16px;
 }
 
 .auth__form .auth__form__container .auth__form__sec form .auth__form__btn {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: bt;
   background-color: var(--authFormBtn--color);
-  width: 50%;
+  width: 92%;
   margin-top: 10px;
+  margin-left: 20px;
   color: #fff;
   cursor: pointer;
 }
 
+@media screen and (max-width: 460px) {
+  .auth__form .auth__form__container form .icons {
+    padding: 5px 0 !important;
+  }
+}
+
 @media screen and (min-width: 560px) {
-  .auth__form {
-    margin-top: 100px;
+  .auth__form .auth__form__container {
+    margin: 120px auto auto;
   }
   .auth__form .auth__form__sec {
-    width: 65%;
+    width: 60%;
     padding: 40px 30px !important;
     margin: auto;
   }
-  .auth__form .auth__form__sec form {
-    -ms-grid-columns: (1fr)[2] !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        grid-template-areas: "fn ln" "em em" "ps ps" !important;
-  }
-  .auth__form .auth__form__sec form input {
-    width: auto !important;
-  }
-  .auth__form .auth__form__sec form .input1 {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: fn;
-  }
-  .auth__form .auth__form__sec form .input2 {
-    margin-left: 20px;
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-    grid-area: ln;
-  }
-  .auth__form .auth__form__sec form .input3 {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-area: em;
-  }
-  .auth__form .auth__form__sec form .input4 {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-area: ps;
+}
+
+@media screen and (min-width: 960px) {
+  .auth__form .auth__form__container {
+    width: 55%;
   }
 }
 /*# sourceMappingURL=authForm.css.map */

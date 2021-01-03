@@ -1,0 +1,74 @@
+.homeComponent .home__container {
+  padding: 20px 10px;
+}
+
+.homeComponent .home__container .jobs {
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 1px #868585;
+          box-shadow: 0px 0px 1px #868585;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 7px;
+  width: 90%;
+  margin: auto;
+}
+
+.homeComponent .home__container .jobs h1 {
+  font-size: 26px;
+  font-weight: 400;
+  color: #3b3844;
+}
+
+.homeComponent .home__container .jobs .jobs__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-shadow: 0px 0px 2px #000;
+          box-shadow: 0px 0px 2px #000;
+  padding: 15px 10px;
+  border-radius: 7px;
+  margin: 20px auto 10px auto;
+}
+
+.homeComponent .home__container .jobs .jobs__content .content__icon__div .content__icon {
+  border-radius: 70px;
+  font-size: 46px;
+  color: #3b56f3;
+}
+
+.homeComponent .home__container .jobs .jobs__content .content__body {
+  padding: 0 10px;
+}
+
+.homeComponent .home__container .jobs .jobs__content .content__body h1 {
+  word-wrap: break-word;
+  word-break: break-all;
+  width: 150px;
+  font-size: 22px;
+  text-transform: capitalize;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.homeComponent .home__container .jobs .jobs__content .content__body p {
+  font-size: 16px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.homeComponent .home__container .jobs .jobs__content .content__body p span {
+  color: grey;
+  padding-left: 10px;
+}
+
+.homeComponent .home__container .jobs .jobs__content .content__close {
+  cursor: pointer;
+  color: gray;
+}
+/*# sourceMappingURL=homeComponents.css.map */

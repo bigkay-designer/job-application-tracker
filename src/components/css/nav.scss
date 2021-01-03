@@ -1,32 +1,88 @@
 .nav__menu{
     position: absolute;
     top: 0;
-    right: 0;
+    right: 10px;
+    z-index: 100;
     cursor: pointer;
     .nav__menu--icon{
         font-size: 40px;
     }
 }
-.nav--small{
-    display: block;
+.nav__menu--close{
+    z-index: 100;
+    cursor: pointer;
+    border: 1px solid #000;
+    box-shadow: 0px 1px 5px gray;
+}
+.nav{
     .nav__container{
         display: flex;
         justify-content: space-between;
         .nav__right{
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
+            display: none !important;
             .nav__right__btn{
-                // display: none;
                 font-size: 18px;
                 cursor: pointer;
-                .nav__right__login{
-                    color: var(--navBtn-color);
+            }
+            a{
+                text-decoration: none;
+            }
+            .nav__right__login{
+                margin-right: 15px;
+                color: var(--navBtn-color);
+            }
+            .nav__right__signup-color{
+                background-color: var(--navBtn-color);
+                color: #fff;
+            }
+        }
+    }
+}
+@media screen and (max-width:460px){
+    .nav--small{
+        .nav__container{
+            .nav__left{
+                width: 75%;
+            }
+            .nav__right{
+                width: 75%;
+                border-radius: 7px;
+                border: 1px solid rgb(131, 130, 130);
+                box-shadow: 0px 1px 7px #000;
+                margin:50px 10px 0 10px  !important;
+                padding: 10px !important;
+                height: 50px !important;
+                .nav__right__btn{
+                    padding: 10px 15px !important;
                 }
-                .nav__right__signup-color{
-                    background-color: var(--navBtn-color);
-                    color: #fff;
+            }
+        }
+    }
+}
+@media screen and (max-width: 759px){
+    .nav--small{
+        .nav__container{
+            position: relative;
+            padding: 10px 15px;
+            .nav__right--open{
+                display: flex !important;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .nav__right{
+                background-color: rgb(255, 255, 255);
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin-top: 45px;
+                margin-right:50px;
+                padding: 10px 20px;
+                height: 70px;
+                border-radius: 7px;
+                border: 1px solid rgb(131, 130, 130);
+                box-shadow: 0px 1px 7px #000;
+                .nav__right__btn{
+                    padding: 10px 30px;
                 }
             }
         }
@@ -35,6 +91,9 @@
 @media screen and (min-width:760px){
     .nav__menu{
         display: none;
+    }
+    .nav__menu--close{
+        display: none !important;
     }
     .nav{
         border-bottom: 1px solid rgb(206, 205, 205);
@@ -51,19 +110,7 @@
                 }
             }
             .nav__right{
-                display: block;
-                .nav__right__btn{
-                    font-size: 18px;
-                    cursor: pointer;
-                }
-                .nav__right__login{
-                    margin-right: 15px;
-                    color: var(--navBtn-color);
-                }
-                .nav__right__signup-color{
-                    background-color: var(--navBtn-color);
-                    color: #fff;
-                }
+                display: block !important;
             }
         }
     }
