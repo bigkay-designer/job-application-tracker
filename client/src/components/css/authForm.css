@@ -40,7 +40,7 @@
       grid-template-columns: 10% 90%;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: ". ." ". ." ". ." ". ." ". bt";
+      grid-template-areas: ". ." ". ." ". ." ". ." ". ." ". bt";
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -65,7 +65,7 @@
 }
 
 .auth__form .auth__form__container .auth__form__sec form .auth__form__btn {
-  -ms-grid-row: 5;
+  -ms-grid-row: 6;
   -ms-grid-column: 2;
   grid-area: bt;
   background-color: var(--authFormBtn--color);
