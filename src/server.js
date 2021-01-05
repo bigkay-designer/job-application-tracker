@@ -26,6 +26,7 @@ db.once('open', ()=>{
 
 // App config
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(
     session({
@@ -38,8 +39,9 @@ app.use(cookieParser(process.env.EXPRESS_SESSION))
 
 
 app.use((req, res, next)=>{
+    res.locals.currentUser = req.user;
     res.header("Access-Control-Allow-Origin", "*")
-    next()
+    next();
 })
 
 

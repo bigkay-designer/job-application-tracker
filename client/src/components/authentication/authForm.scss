@@ -32,9 +32,21 @@
                 ". ."
                 ". ."
                 ". ."
-                ". ."
-                ". bt";
+                ". bt"
+                ". a";
                 align-items: center;
+                a{
+                    grid-area: a;
+                    margin:10px 0 0 20px;
+                    cursor:  pointer;
+                    text-decoration: none;
+                    button{
+                        font-size: 16px;
+                        background-color: var(--navBtn-color);
+                        color: #fff;
+                        margin-left: 10px;
+                    }
+                }
                 .icons{
                     background-color: white;
                     padding: 5px 20px;

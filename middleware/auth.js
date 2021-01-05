@@ -5,7 +5,7 @@ export default(req, res, next)=> {
     if(!token) return res.status(401).json('Access Denied')
     try{
         const verify = jwt.verify(token, process.env.JWT_SECRET)
-        res.user = verify
+        req.user = verify
         next()
     } catch(err){
         res.status(500).send({err: err.message})

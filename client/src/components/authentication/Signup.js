@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import axios from '../../containers/axios'
 import {Button} from '@material-ui/core'
 import { Person, People, Email, LockOpen } from '@material-ui/icons'
-import '../css/authForm.css'
+import './authForm.css'
 function Signup() {
     const [user, setUser] = useState()
     const [name, setName] = useState('')
@@ -21,10 +21,20 @@ function Signup() {
         axios.post('/api/signup', newUser)
         .then(res =>{
             console.log(res)
+            setName('')
+            setEmail('')
+            setUsername('')
+
+            setTimeout(() => {
+                window.location = '/login'
+                
+            }, 500);
         })
         .catch(err=>{
             console.log(err)
         })
+        
+        setPassword('')
     }
     return (
         <div className="auth__form">
@@ -38,10 +48,10 @@ function Signup() {
                     </>
                     <>
                         <form onSubmit={onFormSubmit}  className="auth__form--input">
-                            <Person className="icons" /><input className="input1" type="text" onChange={e => setName(e.target.value)} required placeholder="Name" />
-                            <Email className="icons" /><input className="input3" type="text" onChange={e => setUsername(e.target.value)} required placeholder="Username" />
-                            <Email className="icons" /><input className="input3" type="email" onChange={e => setEmail(e.target.value)} required placeholder="Emai address" />
-                            <LockOpen className="icons" /><input className="input4" type="password" onChange={e => setPassword(e.target.value)} required placeholder="Create password" />
+                            <Person className="icons" /><input className="input1" type="text" onChange={e => setName(e.target.value)} value={name} required placeholder="Name" />
+                            <People className="icons" /><input className="input3" type="text" onChange={e => setUsername(e.target.value)} value={username} required placeholder="Username" />
+                            <Email className="icons" /><input className="input3" type="email" onChange={e => setEmail(e.target.value)} value={email} required placeholder="Emai address" />
+                            <LockOpen className="icons" /><input className="input4" type="password" onChange={e => setPassword(e.target.value)}value={password} required placeholder="Create password" />
                             <Button className="auth__form__btn" type="submit">Register</Button>
                         </form>
                     </>

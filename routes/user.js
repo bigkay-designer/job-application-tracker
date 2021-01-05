@@ -54,8 +54,14 @@ router.post("/tokenIsValid", async (req, res) => {
     }
 });
 
-router.route('/').get(auth, (req, res)=>{
-    res.send('hello world')
+router.route('/currentuser').get(auth, async (req, res)=>{
+    const userData = await User.findById(req.user)
+
+    res.json({
+        name: userData.name,
+        user: userData.username,
+        id: userData._id
+    })
 })
 
 export default router
