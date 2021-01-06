@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import User from '../models/user'
 
 export default(req, res, next)=> {
     const token = req.header('auth-token')
@@ -6,6 +7,7 @@ export default(req, res, next)=> {
     try{
         const verify = jwt.verify(token, process.env.JWT_SECRET)
         req.user = verify
+
         next()
     } catch(err){
         res.status(500).send({err: err.message})

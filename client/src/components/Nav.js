@@ -31,7 +31,7 @@ function Nav() {
         localStorage.removeItem("token")
         setOpenMenu(false)
         setIfLoggedIn(true)
-        window.location = '/'
+        window.location = '/login'
     }
     return (
         

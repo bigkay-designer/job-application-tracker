@@ -47,6 +47,14 @@
                     color: #033447;
                     margin-top: 15px;
                 }
+                select{
+                    font-size: 18px;
+                    width: 200px;
+                    margin-top: 15px;
+                    padding: 10px 0;
+                    text-transform: capitalize;
+                    color: rgb(34, 33, 33);
+                }
             }
             .btn__div{
                 padding-left: 10px;
@@ -73,7 +81,7 @@
             top: 20%;
             left: 7%;
             width: 80%;
-            height: 60vh;
+            height: 65vh;
         }
     }
 }

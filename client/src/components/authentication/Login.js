@@ -18,6 +18,7 @@ function Signup() {
         axios.post('/api/login',newUser)
         .then(res=>{
             localStorage.setItem("token", res.data.token)
+            console.log(res)
             window.location = '/home'
             setLoggedInUser(true)
             setUsername('')

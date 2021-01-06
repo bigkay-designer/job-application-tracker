@@ -10,25 +10,22 @@ import axios from '../../containers/axios'
 import Nav from '../Nav'
 import {Button} from "@material-ui/core"
 function Home() {
-    const [notLoggedIn, setNotLoggedIn] = useState(false)
     const [user, setUser] = useState()
-    // useEffect(()=>{
-    //     axios.get('/api/currentuser', {headers: {"auth-token": localStorage.getItem('token')}})
-    //     .then(res=>{
-    //         setUser(res.data)
-    //         if(!localStorage.token){
-    //             setNotLoggedIn(true)
-    //         }
-    //     })
-    //     .catch(err => console.log(err))
-    // }, [])
+    const [notLoggedIn, setNotLoggedIn] = useState(false)
+    const [jobs, setJobs] = useState()
+    
+    useEffect(()=>{
+        axios.get('/api/currentuser', {headers: {"auth-token": localStorage.getItem('token')}})
+        .then(res=>{
+            setUser(res.data)
+        })
+    }, [])
 
     useEffect(()=>{
         if(!localStorage.token){
             setNotLoggedIn(true)
         }
     }, [])
-
 
     return (
 

@@ -14,7 +14,7 @@ router.route('/login').post(async (req, res)=>{
         if(!user) return res.status(400).json({msg: 'NO account with this username has been registered. '})
         const isMatch = await bcrypt.compare(password, user.password)
         if(!isMatch) return res.status(400).json({msg: 'You have entered the wrong password'})
-        const token = jwt.sign({_id: user.id}, process.env.JWT_SECRET)
+        const token = jwt.sign({_id: user.id, name: user.name, username: user.username}, process.env.JWT_SECRET)
         res.header("auth-token", token).send({token, user: {id: user._id, name: user.name, username: user.username}})
     } catch(err){
         res.status(500).json({err: err.message})
@@ -59,7 +59,7 @@ router.route('/currentuser').get(auth, async (req, res)=>{
 
     res.json({
         name: userData.name,
-        user: userData.username,
+        username: userData.username,
         id: userData._id
     })
 })
