@@ -9,6 +9,8 @@ const app = express();
 
 // Routes
 import user from '../routes/user'
+import jobs from '../routes/jobs'
+
 const uri = process.env.ATLAS_JOBAPPLICATION
 
 mongoose.connect(uri,{
@@ -47,6 +49,7 @@ app.use((req, res, next)=>{
 
 // Using routes
 app.use('/api', user)
+app.use('/api', jobs)
 
 app.get('*', (req, res)=>{
     res.status(404).send('you visited the wrong page')

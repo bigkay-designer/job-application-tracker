@@ -1,25 +1,50 @@
-
+.home{
+    .home__Add__btn{
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 20px;
+        a{
+            text-decoration: none;
+        }
+        .btn{
+            background-color: #1A90FD;
+            color: #fff;
+            font-size: 22px;
+            &:hover{
+                background-color:#0a60b1 ;
+            }
+        }
+}
+}
 @media screen and (min-width: 760px){
     .home{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        grid-gap: 10px;
-        width: 95%;
-        margin: auto ;
+        .home__container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            grid-gap: 10px;
+            width: 95%;
+            margin: auto ;
+        }
     }
 
 }
 
 @media screen and (min-width:1060px){
     .home{
-        grid-template-columns: repeat(3, 1fr);
-        width: 100%;
+        .home__container{
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+        }
     }
 }
 
 @media screen and (min-width:1260px){
     .home{
-        grid-template-columns: repeat(4, 1fr);
+        .home__container{
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 }

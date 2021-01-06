@@ -3,6 +3,7 @@ import {Redirect, Link} from 'react-router-dom'
 import {Email, LockOpen} from '@material-ui/icons'
 import {Button} from '@material-ui/core'
 import axios from '../../containers/axios'
+import Nav from '../Nav'
 import './authForm.css'
 function Signup() {
 
@@ -30,6 +31,7 @@ function Signup() {
     return (
         <div className="auth__form">
             {/* {loggedInUser ? <Redirect to="/home" />  : null} */}
+            <Nav />
             <div className="auth__form__container">
                 <div className="auth__form--title">
                     <h2>Ready to track your applications?</h2>

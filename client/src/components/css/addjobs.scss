@@ -1,0 +1,89 @@
+.addJobs{
+    .addJobs__container{
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 80%;
+        margin: auto;
+        height: 100vh;
+        background: #b6bbd4;
+        background: radial-gradient(circle, #ffffff 0%, #f7fff9 100%);
+        box-shadow: 0px 1px 4px #000000;
+        z-index: 100;
+        padding:0 20px;
+        .close{
+            box-shadow: 0px 1px 4px #000000;
+            font-size: 30px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        form{
+            display: flex;
+            flex-direction: column ;
+            justify-content: center;
+            align-items: center;
+            .field{
+                display: grid;
+                grid-template-columns: 10% 90%;
+                grid-template-rows: auto;
+                width: 100%;
+                padding-left: 10px;
+                input{
+                    border: 0;
+                    padding: 10px 7px;
+                    font-size: 16px;
+                    margin-top: 15px;
+                    box-shadow: 0px 1px 4px #636262;
+                    outline: none;
+                }
+                textarea{
+                    margin-top: 15px;
+                    padding: 10px 7px;
+                    outline: none;
+                    box-shadow: 0px 1px 4px #636262;
+                    border: none;
+                }
+                .icon{
+                    color: #033447;
+                    margin-top: 15px;
+                }
+            }
+            .btn__div{
+                padding-left: 10px;
+                margin-top: 20px;
+                width: 100%;
+                .btn{ 
+                    width: 100%;
+                    background-color: #1A90FD;
+                    color: #fff;
+                    font-size: 22px;
+                    &:hover{
+                        background-color:#0a60b1 ;
+                    }
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 560px){
+    .addJobs{
+        .addJobs__container{
+            top: 20%;
+            left: 7%;
+            width: 80%;
+            height: 60vh;
+        }
+    }
+}
+
+@media screen and (min-width:860px){
+    .addJobs{
+        .addJobs__container{
+            left: 25%;
+            width: 50%;
+            max-width: 870px;
+        }
+    }
+}

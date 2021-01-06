@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from '../../containers/axios'
+import Nav from '../Nav'
 import {Button} from '@material-ui/core'
 import { Person, People, Email, LockOpen } from '@material-ui/icons'
 import './authForm.css'
@@ -38,6 +39,7 @@ function Signup() {
     }
     return (
         <div className="auth__form">
+            <Nav />
             <div className="auth__form__container">
                 <div className="auth__form--title">
                     <h2>Ready to track your applications?</h2>
