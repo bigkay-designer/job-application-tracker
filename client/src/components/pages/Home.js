@@ -10,9 +10,9 @@ import axios from '../../containers/axios'
 import Nav from '../Nav'
 import {Button} from "@material-ui/core"
 function Home() {
-    const [user, setUser] = useState()
+    const [user, setUser] = useState([])
     const [notLoggedIn, setNotLoggedIn] = useState(false)
-    const [jobs, setJobs] = useState()
+    const [jobs, setJobs] = useState([])
     
     useEffect(()=>{
         axios.get('/api/currentuser', {headers: {"auth-token": localStorage.getItem('token')}})
@@ -27,6 +27,13 @@ function Home() {
         }
     }, [])
 
+    useEffect(()=>{
+        axios.get('/api/jobs', {headers: {"auth-token": localStorage.getItem('token')}})
+        .then(res => {
+            setJobs(res.data)
+        })
+
+    }, [])
     return (
 
         <div className="home">
@@ -38,10 +45,10 @@ function Home() {
                     </Link>
                 </div>
             <div className="home__container">
-                <Saved />
-                <Applied />
-                <Interview />
-                <Offers />
+                <Saved savedJobs={jobs} user={user} />
+                <Applied applied={jobs} user={user} />
+                <Interview interview={jobs} user={user} />
+                <Offers offers={jobs} user={user} />
             </div>
         </div>
     )

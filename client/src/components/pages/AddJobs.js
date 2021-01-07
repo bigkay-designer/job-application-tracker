@@ -91,7 +91,7 @@ function AddJobs() {
                         <SelectAll className="icon" />
                         <select onChange={e => setSection(e.target.value)} required>
                             <option value="choose">choose</option>
-                            <option className="option" value="saved ">saved jobs</option>
+                            <option className="option" value="saved">saved jobs</option>
                             <option className="option" value="applied">applied jobs</option>
                             <option className="option" value="interview">interview</option>
                             <option className="option" value="offers">offers</option>

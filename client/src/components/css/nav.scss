@@ -18,6 +18,20 @@
 .nav--none{
     display: none;
 }
+.loggedUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    h3{
+        font-weight: 600;
+        padding:  0 15px 0 5px ;
+        font-size: 16px;
+    }
+    .icon{
+        color: grey;
+    }
+}
 .nav{
     .nav__container{
         display: flex;
@@ -49,6 +63,7 @@
                 width: 75%;
             }
             .nav__right{
+                z-index: 100;
                 width: 75%;
                 border-radius: 7px;
                 border: 1px solid rgb(131, 130, 130);

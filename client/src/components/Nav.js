@@ -1,12 +1,22 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import {Button} from '@material-ui/core'
-import {Menu, Close} from '@material-ui/icons'
+import {Menu, Close, Person} from '@material-ui/icons'
 import axios from '../containers/axios'
 import './css/nav.css'
 function Nav() {
     const [openMenu, setOpenMenu] = useState(false)
     const [ifLoggedIn, setIfLoggedIn] = useState(true)
+    const [user, setUser] = useState([])
+
+    useEffect(()=>{
+        axios.get('/api/currentuser', {headers: {"auth-token": localStorage.getItem("token")}})
+        .then(res=>{
+            setUser(res.data)
+
+        })
+        .catch(err => console.log(err))
+    }, [])
 
     useEffect(()=>{
         if(!localStorage.token){
@@ -54,7 +64,13 @@ function Nav() {
                             <Button className="nav__right__btn nav__right__signup-color">signup</Button>
                         </Link> 
                     </div>
-                    :<Button onClick={loggoutHandler} className="nav__right__btn nav__right__login">Logout</Button>
+                    :
+                    <div className="loggedUser"> 
+                        <>
+                            <Person className="icon" /><h3> {user.name} </h3>
+                        </>
+                        <Button onClick={loggoutHandler} className="nav__right__btn nav__right__login">Logout</Button>
+                    </div>
                     }
     
                 </div>
