@@ -1,10 +1,10 @@
 import express from 'express'
 const router = express.Router()
-import jwt from 'jsonwebtoken'
-import User from '../models/user'
 import auth from '../middleware/auth'
 import jobs from '../models/jobs'
 
+
+// Add a job  Route
 router.route('/jobs/post').post(auth, async (req, res)=>{
     const {jobTitle, companyName, location, jobLink, description, logo, section} = req.body
     let author = {
@@ -26,9 +26,32 @@ router.route('/jobs/post').post(auth, async (req, res)=>{
     })
 })
 
+// Delete Jobs Route
+router.route('/jobs/delete/:id').delete(auth, (req, res)=>{
+    jobs.findByIdAndDelete(req.params.id)
+    .then(resData => {
+        res.json(`deleted job ${resData}`)
+    })
+    .catch(err => res.status(400).json(`error ${err}`))
+})
+
+
+// Update jobs section
+router.route('/jobs/update/:id').put(auth, (req, res)=>{
+    jobs.findByIdAndUpdate(req.params.id, req.body)
+    .then(updatedJob => {
+        res.json(updatedJob)
+    })
+    .catch(err =>{
+        res.status(400).json(`error ${err}`)
+    })
+})
+
+
+// Get all jobs Route
 router.route('/jobs').get(auth, async (req, res)=>{
     try{
-        const addedJobs = await jobs.find(req.jobs)
+        const addedJobs = await jobs.find(req.jobs).sort({_id: -1})
         res.json(addedJobs)
 
     }catch (err){

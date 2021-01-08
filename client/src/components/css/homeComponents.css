@@ -1,45 +1,63 @@
 .homeComponent .home__container {
-  padding: 20px 10px;
+  padding: 20px 0px;
 }
 
 .homeComponent .home__container .jobs {
   background-color: white;
-  -webkit-box-shadow: 0px 0px 1px #868585;
-          box-shadow: 0px 0px 1px #868585;
+  -webkit-box-shadow: 0px 0px 3px #868585;
+          box-shadow: 0px 0px 3px #868585;
   border: none;
-  padding: 10px 15px;
+  padding: 0px 0 15px;
   border-radius: 7px;
   width: 90%;
   margin: auto;
+  overflow-y: scroll;
+  max-height: 800px;
 }
 
-.homeComponent .home__container .jobs h1 {
+.homeComponent .home__container .jobs .title__div {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  padding: 10px 15px;
+  z-index: 2;
+}
+
+.homeComponent .home__container .jobs .title__div h1 {
+  color: #fff;
+  text-transform: capitalize;
   font-size: 26px;
   font-weight: 400;
-  color: #3b3844;
+}
+
+.homeComponent .home__container .jobs .saved__h1 {
+  background-color: #34568B;
+}
+
+.homeComponent .home__container .jobs .applied__h1 {
+  background-color: #EFC050;
+}
+
+.homeComponent .home__container .jobs .interview__h1 {
+  background-color: #88B04B;
+}
+
+.homeComponent .home__container .jobs .offers__h1 {
+  background-color: #009B77;
 }
 
 .homeComponent .home__container .jobs .jobs__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   -webkit-box-shadow: 0px 0px 2px #000;
           box-shadow: 0px 0px 2px #000;
   padding: 15px 10px;
   border-radius: 7px;
-  margin: 20px auto 10px auto;
+  margin: 20px 15px 10px 15px;
 }
 
 .homeComponent .home__container .jobs .jobs__content .content__icon__div .content__icon {
   border-radius: 70px;
   font-size: 46px;
-  color: #3b56f3;
 }
 
 .homeComponent .home__container .jobs .jobs__content .content__body {
@@ -49,17 +67,16 @@
 .homeComponent .home__container .jobs .jobs__content .content__body h1 {
   word-wrap: break-word;
   word-break: break-all;
-  width: 150px;
   font-size: 22px;
   text-transform: capitalize;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 600;
-  margin-bottom: 15px;
 }
 
 .homeComponent .home__container .jobs .jobs__content .content__body p {
   font-size: 16px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 10px 0;
 }
 
 .homeComponent .home__container .jobs .jobs__content .content__body p span {
@@ -67,8 +84,46 @@
   padding-left: 10px;
 }
 
-.homeComponent .home__container .jobs .jobs__content .content__close {
+.homeComponent .home__container .jobs .jobs__content .content__body .content__body__text {
+  line-height: 1.7em;
+  text-align: left;
+}
+
+.homeComponent .home__container .jobs .jobs__content .content__body .content__body__text a {
+  text-decoration: none;
+}
+
+.homeComponent .home__container .jobs .jobs__content .content__body .content__body__text .readmore__btn {
+  background-color: #1A90FD;
+  color: #fff;
+}
+
+.homeComponent .home__container .jobs .jobs__content .close__div {
+  position: relative;
+}
+
+.homeComponent .home__container .jobs .jobs__content .close__div .content__close {
+  position: absolute;
+  top: 0;
+  right: 0;
   cursor: pointer;
   color: gray;
+  font-size: 26px;
+}
+
+@media screen and (min-width: 760px) {
+  .homeComponent .home__container .jobs::-webkit-scrollbar {
+    width: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+  }
+  .homeComponent .home__container .jobs::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  .homeComponent .home__container .jobs::-webkit-scrollbar-thumb {
+    background-color: #7b9ab3;
+  }
 }
 /*# sourceMappingURL=homeComponents.css.map */

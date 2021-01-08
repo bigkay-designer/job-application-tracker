@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import {Button} from '@material-ui/core'
-import {Menu, Close, Person} from '@material-ui/icons'
+import {Menu, Close, Person, Bookmarks, Home} from '@material-ui/icons'
 import axios from '../containers/axios'
 import './css/nav.css'
 function Nav() {
@@ -51,7 +51,10 @@ function Nav() {
             </div>
             <div className="nav__container">
                 <div className="nav__left">
-                    <h1>job application tracker</h1>
+                    <Bookmarks className="icon" />
+                    <Link to="/">
+                        <h1>jobook</h1>
+                    </Link>
                 </div>
                 <div className={`nav__right ${openMenu && "nav__right--open"}`}>
                     <Close className="nav__menu--close" onClick={closeMenuHandler} />
@@ -69,6 +72,8 @@ function Nav() {
                         <>
                             <Person className="icon" /><h3> {user.name} </h3>
                         </>
+
+                        <Link to="/home" ><Home className="icon" /><Button className="nav__right__btn nav__right__login">Home</Button> </Link>
                         <Button onClick={loggoutHandler} className="nav__right__btn nav__right__login">Logout</Button>
                     </div>
                     }

@@ -16,7 +16,6 @@ function AddJobs() {
     const [jobLink, setJobLink] = useState('')
     const [description, setDescription] = useState('')
     const [section, setSection] = useState('')
-    const [logo, setLogo] = useState('')
 
     useEffect( ()=>{
         axios.get('/api/jobs', {headers:{'auth-token': localStorage.getItem('token')}})
@@ -94,7 +93,7 @@ function AddJobs() {
                             <option className="option" value="saved">saved jobs</option>
                             <option className="option" value="applied">applied jobs</option>
                             <option className="option" value="interview">interview</option>
-                            <option className="option" value="offers">offers</option>
+                            <option className="option" value="offer">offer</option>
                         </select>
                     </div>
                     <div className="btn__div">

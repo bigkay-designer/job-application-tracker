@@ -31,11 +31,38 @@
     .icon{
         color: grey;
     }
+    a{
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 .nav{
     .nav__container{
         display: flex;
         justify-content: space-between;
+        .nav__left{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .icon{
+                background-color: rgb(72, 134, 0);
+                border-radius: 12px;
+                padding: 5px;
+                color: rgb(236, 240, 227);
+                font-size: 46px;
+            }
+            h1{
+                padding-left: 10px;
+                font-size: 36px;
+                font-weight: 500;
+                color: rgb(116, 75, 1);
+            }
+            a{
+                text-decoration: none;
+            }
+        }
         .nav__right{
             display: none !important;
             .nav__right__btn{
@@ -63,7 +90,6 @@
                 width: 75%;
             }
             .nav__right{
-                z-index: 100;
                 width: 75%;
                 border-radius: 7px;
                 border: 1px solid rgb(131, 130, 130);
@@ -89,6 +115,7 @@
                 align-items: center;
             }
             .nav__right{
+                z-index: 100;
                 background-color: rgb(255, 255, 255);
                 position: absolute;
                 top: 0;
@@ -117,6 +144,10 @@
     .nav{
         border-bottom: 1px solid rgb(206, 205, 205);
         box-shadow: 0 1px 4px rgb(204, 204, 204);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: #fff;
         .nav__container{
             display: flex;
             justify-content: space-between;

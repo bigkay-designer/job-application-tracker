@@ -8,7 +8,6 @@ const jobs = new Schema ({
     location: String,
     jobLink: String,
     description: String,
-    logo: String,
     section: String,
     author: {
         id: {

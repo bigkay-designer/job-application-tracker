@@ -5,7 +5,6 @@ import {Button} from '@material-ui/core'
 import { Person, People, Email, LockOpen } from '@material-ui/icons'
 import './authForm.css'
 function Signup() {
-    const [user, setUser] = useState()
     const [name, setName] = useState('')
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')

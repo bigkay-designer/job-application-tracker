@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import {Redirect, Link} from 'react-router-dom'
-import {Close, Facebook} from '@material-ui/icons'
 import Saved from './Saved'
 import Applied from './Applied'
 import Interview from './Interview'
 import Offers from './Offers'
 import '../css/home.css'
+import AddJobs from './AddJobs'
 import axios from '../../containers/axios'
 import Nav from '../Nav'
 import {Button} from "@material-ui/core"
@@ -13,6 +13,7 @@ function Home() {
     const [user, setUser] = useState([])
     const [notLoggedIn, setNotLoggedIn] = useState(false)
     const [jobs, setJobs] = useState([])
+    const [removeJob, setRemoveJob] = useState(true)
     
     useEffect(()=>{
         axios.get('/api/currentuser', {headers: {"auth-token": localStorage.getItem('token')}})
@@ -33,10 +34,22 @@ function Home() {
             setJobs(res.data)
         })
 
-    }, [])
+    }, [removeJob])
+
+    const deleteJobHandler = (e, id) =>{
+        e.preventDefault()
+        axios.delete(`/api/jobs/delete/${id}`,  {headers: {"auth-token": localStorage.getItem('token')}})
+        .then(res => {
+            setRemoveJob(jobs.filter(el => el.id !== id))
+            // console.log(res)
+        })
+        .catch(err => console.log(err))
+    }
+
+    
     return (
 
-        <div className="home">
+        <div key="1" className="home">
             <Nav />
                 {notLoggedIn ? <Redirect to="/login" />: null}
                 <div className="home__Add__btn">
@@ -44,11 +57,11 @@ function Home() {
                         <Button className="btn">Add job</Button>
                     </Link>
                 </div>
-            <div className="home__container">
-                <Saved savedJobs={jobs} user={user} />
-                <Applied applied={jobs} user={user} />
-                <Interview interview={jobs} user={user} />
-                <Offers offers={jobs} user={user} />
+            <div className="home__container__main">
+                <Saved saved={jobs} user={user} deleted={removeJob} deleteJob={deleteJobHandler} />
+                <Applied applied={jobs} user={user} deleted={removeJob} deleteJob={deleteJobHandler} />
+                <Interview interview={jobs} user={user} deleted={removeJob} deleteJob={deleteJobHandler} />
+                <Offers offers={jobs} user={user} deleted={removeJob} deleteJob={deleteJobHandler} />
             </div>
         </div>
     )

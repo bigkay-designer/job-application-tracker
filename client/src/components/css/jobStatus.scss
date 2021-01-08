@@ -1,0 +1,86 @@
+.job__stage{
+    
+    .job__stage__h1{
+        background-color: rgb(250, 29, 66);
+        margin: 10px 15px;
+        padding: 10px 0;
+        color: rgb(255, 255, 255);
+        h1{
+            font-weight: 900;
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 20px;
+        }
+    }
+    .job__stage__container{
+        padding:15px 10px;
+        margin: 0px 15px 20px; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .job__stage__btn{
+            cursor: pointer;
+            color: #fff;
+            text-transform: capitalize;
+            font-weight: 900;
+        }
+        .applied{
+            background-color: #EFC050;
+    
+        }
+        .interview{
+            background-color:#88B04B ;
+        }
+        .offers{
+            background-color: #009B77;
+    
+        }
+        form{
+            width: 100%;
+            .form__input{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 10px;
+
+                .label{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-bottom: 10px;
+
+                    label{
+                        padding: 7px 15px;
+                        font-size: 16px;
+                        margin-left: 10px;
+                        width: 100%;
+                        color: #fff;
+                        border-radius: 20px;
+                    }
+                    .saved{
+                        background-color:  #34568B;
+                    }
+                    .applied{
+                        background-color: #EFC050;
+                    }
+                    .interview{
+                        background-color: #88B04B;
+                    }
+                    .offers{
+                        background-color: #009B77;
+                    }
+                }
+            }
+            .btn{
+                width: 100%;
+                margin:20px auto 10px auto;
+                .select__btn{
+                    font-size: 20px;
+                    width: 100%;
+                    background-color: rgb(255, 174, 0);
+                    color: #fff;
+                }
+
+            }
+        }
+    }
+}

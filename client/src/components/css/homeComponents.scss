@@ -1,34 +1,55 @@
+// .deletedJob{
+//     display: none !important;
+// }
 .homeComponent{
-    
     .home__container{
-        padding: 20px 10px;
+        padding: 20px 0px;
         
         .jobs{
             background-color: rgb(255, 255, 255);
-            box-shadow: 0px 0px 1px rgb(134, 133, 133);
+            box-shadow: 0px 0px 3px rgb(134, 133, 133);
             border: none;
-            padding: 10px 15px;
+            padding:0px 0 15px;
             border-radius: 7px;
             width: 90%;
             margin: auto;
-            h1{
-                font-size: 26px;
-                font-weight: 400;
-                color: rgb(59, 56, 68);
+            overflow-y: scroll;
+            max-height: 800px;
+            .title__div{
+                position: sticky;
+                top: 0;
+                text-align: center;
+                padding: 10px 15px;
+                z-index: 2;
+                h1{
+                    color: #fff;
+                    text-transform: capitalize;
+                    font-size: 26px;
+                    font-weight: 400;
+                }
             }
+            .saved__h1{
+                background-color:  #34568B;
+            }
+            .applied__h1{
+                background-color: #EFC050;
+            }
+            .interview__h1{
+                background-color: #88B04B;
+            }
+            .offers__h1{
+                background-color: #009B77;
+            }
+
             .jobs__content{
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
                 box-shadow: 0px 0px 2px #000;
                 padding: 15px 10px;
                 border-radius: 7px;
-                margin: 20px auto 10px auto;
+                margin: 20px 15px 10px 15px;
                 .content__icon__div{
                     .content__icon{
                         border-radius: 70px;
                         font-size: 46px;
-                        color: rgb(59, 86, 243);
                     }
                 }
                 .content__body{
@@ -36,26 +57,66 @@
                     h1{
                         word-wrap:break-word ;
                         word-break: break-all;
-                        width: 150px;
                         font-size: 22px;
                         text-transform: capitalize;
                         font-family: Georgia, 'Times New Roman', Times, serif;
                         font-weight: 600;
-                        margin-bottom: 15px;
                     }
                     p{
                         font-size: 16px;
                         font-family: Georgia, 'Times New Roman', Times, serif;
+                        margin: 10px 0;
                         span{
                             color: grey;
                             padding-left: 10px;
                         }
                     }
+                    .content__body__text{
+                        line-height: 1.7em;
+                        text-align: left;
+                        a{
+                            text-decoration: none;
+                        }
+                        .readmore__btn{
+                            background-color: #1A90FD;
+                            color: #fff;
+                        }
+                    }
                 }
-                .content__close{
-                    cursor: pointer;
-                    color: gray;
+                .close__div{
+                    position: relative;
+                    .content__close{
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        cursor: pointer;
+                        color: gray;
+                        font-size: 26px;
+                    }
                 }
+            }
+        }
+       
+    }
+}
+
+@media screen and (min-width: 760px){
+    .homeComponent{
+        .home__container{
+            .jobs{
+                // overflow-y: scroll;
+                // max-height: 800px;
+                &::-webkit-scrollbar {
+                    width: 10px;
+                    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                    border-radius: 12px;
+                  }
+                  &::-webkit-scrollbar-track {
+                    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                  }
+                  &::-webkit-scrollbar-thumb {
+                    background-color: rgb(123, 154, 179);
+                  }
             }
         }
     }

@@ -1,0 +1,109 @@
+.job__stage .job__stage__h1 {
+  background-color: #fa1d42;
+  margin: 10px 15px;
+  padding: 10px 0;
+  color: white;
+}
+
+.job__stage .job__stage__h1 h1 {
+  font-weight: 900;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.job__stage .job__stage__container {
+  padding: 15px 10px;
+  margin: 0px 15px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.job__stage .job__stage__container .job__stage__btn {
+  cursor: pointer;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 900;
+}
+
+.job__stage .job__stage__container .applied {
+  background-color: #EFC050;
+}
+
+.job__stage .job__stage__container .interview {
+  background-color: #88B04B;
+}
+
+.job__stage .job__stage__container .offers {
+  background-color: #009B77;
+}
+
+.job__stage .job__stage__container form {
+  width: 100%;
+}
+
+.job__stage .job__stage__container form .form__input {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.job__stage .job__stage__container form .form__input .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.job__stage .job__stage__container form .form__input .label label {
+  padding: 7px 15px;
+  font-size: 16px;
+  margin-left: 10px;
+  width: 100%;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.job__stage .job__stage__container form .form__input .label .saved {
+  background-color: #34568B;
+}
+
+.job__stage .job__stage__container form .form__input .label .applied {
+  background-color: #EFC050;
+}
+
+.job__stage .job__stage__container form .form__input .label .interview {
+  background-color: #88B04B;
+}
+
+.job__stage .job__stage__container form .form__input .label .offers {
+  background-color: #009B77;
+}
+
+.job__stage .job__stage__container form .btn {
+  width: 100%;
+  margin: 20px auto 10px auto;
+}
+
+.job__stage .job__stage__container form .btn .select__btn {
+  font-size: 20px;
+  width: 100%;
+  background-color: #ffae00;
+  color: #fff;
+}
+/*# sourceMappingURL=jobStatus.css.map */
